@@ -35,15 +35,15 @@
 #import "APCAppCore.h"
 #import "APCDebugWindow.h"
 #import "APCPasscodeViewController.h"
-#import <AVFoundation/AVFoundation.h>
-#import <AudioToolbox/AudioToolbox.h>
-#import "APCOnboarding.h"
 #import "APCTasksReminderManager.h"
 #import "UIView+Helper.h"
 #import "UIAlertController+Helper.h"
 #import "APCDemographicUploader.h"
 #import "APCConstants.h"
 #import "APCUtilities.h"
+
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 /*
  Be sure to set the CORRECT current version before releasing to production
@@ -85,6 +85,9 @@ static NSUInteger   const kIndexOfProfileTab                = 3;
 @property (nonatomic, strong) NSOperationQueue *healthKitCollectorQueue;
 @property (nonatomic, strong) APCDemographicUploader  *demographicUploader;
 @property (nonatomic, strong) APCPasscodeViewController *passcodeViewController;
+
+@property (nonatomic, strong, readwrite) APCOnboardingManager *onboardingManager;
+
 @end
 
 @implementation APCAppDelegate
@@ -114,15 +117,21 @@ static NSUInteger   const kIndexOfProfileTab                = 3;
     [self initializeBridgeServerConnection];
     [self initializeAppleCoreStack];
 
-    [self.scheduler loadTasksAndSchedulesFromDiskAndThenUseThisQueue: nil
-                                                    toDoThisWhenDone: nil];
+    [self.scheduler loadTasksAndSchedulesFromDiskAndThenUseThisQueue:[NSOperationQueue mainQueue]
+                                                    toDoThisWhenDone:^(NSError* errorFetchingOrLoading)
+    {
+        if(!errorFetchingOrLoading)
+        {
+            [self performMigrationAfterFirstImport];
+        }
+    }];
 
     [self registerNotifications];
-    [self setUpHKPermissions];
     [self setUpAppAppearance];
     [self setUpTasksReminder];
     [self performDemographicUploadIfRequired];
     [self showAppropriateVC];
+    
     return YES;
 }
 
@@ -162,6 +171,11 @@ static NSUInteger   const kIndexOfProfileTab                = 3;
     return (NSUInteger) [defaults integerForKey:@"previousVersion"];
 }
 
+- (void)performMigrationAfterFirstImport
+{
+    /* abstract implementation */
+}
+
 - (void)performMigrationFrom:(NSInteger) __unused previousVersion currentVersion:(NSInteger)__unused currentVersion
 {
     /* abstract implementation */
@@ -174,6 +188,7 @@ static NSUInteger   const kIndexOfProfileTab                = 3;
 
 - (BOOL)application:(UIApplication *) __unused application didFinishLaunchingWithOptions:(NSDictionary *) __unused launchOptions
 {
+    self.dataUploader = [[APCDataUploader alloc] init];
     [self.dataMonitor appFinishedLaunching];
     return YES;
 }
@@ -295,40 +310,6 @@ static NSUInteger   const kIndexOfProfileTab                = 3;
     }
     
     return isSuccessful;
-}
-
-/*********************************************************************************/
-#pragma mark - State Restoration
-/*********************************************************************************/
-
-- (BOOL)application:(UIApplication *) __unused application shouldSaveApplicationState:(NSCoder *) __unused coder
-{
-    [[UIApplication sharedApplication] ignoreSnapshotOnNextApplicationLaunch];
-    return self.dataSubstrate.currentUser.isSignedIn;
-}
-
-- (BOOL)application:(UIApplication *) __unused application shouldRestoreApplicationState:(NSCoder *) __unused coder
-{
-    return self.dataSubstrate.currentUser.isSignedIn;
-}
-
-- (UIViewController *)application:(UIApplication *) __unused application viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *) __unused coder
-{
-    if ([identifierComponents.lastObject isEqualToString:@"AppTabbar"]) {
-        return self.window.rootViewController;
-    }
-    else if ([identifierComponents.lastObject isEqualToString:@"ActivitiesNavController"])
-    {
-        return self.tabBarController.viewControllers[kAPCActivitiesTabIndex];
-    }
-    else if ([identifierComponents.lastObject isEqualToString:@"APCActivityVC"])
-    {
-        if ( [self.tabBarController.viewControllers[kAPCActivitiesTabIndex] respondsToSelector:@selector(topViewController)]) {
-            return [(UINavigationController*) self.tabBarController.viewControllers[kAPCActivitiesTabIndex] topViewController];
-        }
-    }
-    
-    return nil;
 }
 
 /*********************************************************************************/
@@ -559,11 +540,6 @@ static NSUInteger   const kIndexOfProfileTab                = 3;
     return consentSections;
 }
 
-- (void) setUpHKPermissions
-{
-    [APCPermissionsManager setHealthKitTypesToRead:self.initializationOptions[kHKReadPermissionsKey]];
-    [APCPermissionsManager setHealthKitTypesToWrite:self.initializationOptions[kHKWritePermissionsKey]];
-}
 
 - (void) setUpTasksReminder {/*Abstract Implementation*/}
 
@@ -680,9 +656,8 @@ static NSUInteger   const kIndexOfProfileTab                = 3;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signedInNotification:) name:(NSString *)APCUserSignedInNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logOutNotification:) name:(NSString *)APCUserLogOutNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userConsented:) name:APCUserDidConsentNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(withdrawStudy:) name:APCUserWithdrawStudyNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(withdrawStudy:) name:APCUserDidWithdrawStudyNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newsFeedUpdated:) name:kAPCNewsFeedUpdateNotification object:nil];
-
 }
 
 - (void)dealloc
@@ -802,8 +777,7 @@ static NSUInteger   const kIndexOfProfileTab                = 3;
 - (void)showTabBar
 {
     self.tabBarController = [[UITabBarController alloc] init];
-    
-    NSUInteger     selectedItemIndex = kAPCActivitiesTabIndex;
+    NSUInteger selectedItemIndex = kAPCActivitiesTabIndex;
     
     NSMutableArray *tabBarItems = [NSMutableArray new];
     NSMutableArray *viewControllers = [NSMutableArray new];
@@ -1003,25 +977,34 @@ static NSUInteger   const kIndexOfProfileTab                = 3;
                     completion:nil];
 }
 
-- (void)instantiateOnboardingForType:(APCOnboardingTaskType)type
-{
-    if (self.onboarding) {
-        self.onboarding = nil;
-        self.onboarding.delegate = nil;
+#pragma mark - Onboarding Manager
+
+- (APCOnboardingManager *)onboardingManager {
+    if (!_onboardingManager) {
+        self.onboardingManager = [APCOnboardingManager managerWithProvider:self user:self.dataSubstrate.currentUser];
     }
-    
-    self.onboarding = [[APCOnboarding alloc] initWithDelegate:self taskType:type];
+    return _onboardingManager;
 }
 
-- (ORKTaskViewController *)consentViewController
-{
-    NSAssert(FALSE, @"Override this method to return a valid Consent Task View Controller.");
+- (APCPermissionsManager *)permissionsManager {
+    return [APCPermissionsManager new];
+}
+
+- (APCScene *)inclusionCriteriaSceneForOnboarding:(APCOnboarding *)__unused onboarding {
+    NSAssert(NO, @"Cannot retun nil. Override this delegate method to return a valid APCScene.");
     return nil;
 }
 
-/*********************************************************************************/
+
+- (ORKTaskViewController *)consentViewController
+{
+    NSAssert(NO, @"Override this method to return a valid Consent Task View Controller.");
+    return nil;
+}
+
+
 #pragma mark - Private Helper Methods
-/*********************************************************************************/
+
 - (NSString *) applicationDocumentsDirectory
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -1029,29 +1012,6 @@ static NSUInteger   const kIndexOfProfileTab                = 3;
     return basePath;
 }
 
-#pragma mark - APCOnboardingDelegate methods
-
-- (APCScene *) inclusionCriteriaSceneForOnboarding: (APCOnboarding *) __unused onboarding
-{
-    NSAssert(FALSE, @"Cannot retun nil. Override this delegate method to return a valid APCScene.");
-    
-    return nil;
-}
-
-#pragma mark - APCOnboardingTaskDelegate methods
-
-- (APCUser *) userForOnboardingTask: (APCOnboardingTask *) __unused task
-{
-    return self.dataSubstrate.currentUser;
-}
-
-- (NSInteger) numberOfServicesInPermissionsListForOnboardingTask: (APCOnboardingTask *) __unused task
-{
-    NSDictionary *initialOptions = ((APCAppDelegate *)[UIApplication sharedApplication].delegate).initializationOptions;
-    NSArray *servicesArray = initialOptions[kAppServicesListRequiredKey];
-    
-    return servicesArray.count;
-}
 
 #pragma mark - Secure View
 
@@ -1085,7 +1045,9 @@ static NSUInteger   const kIndexOfProfileTab                = 3;
     }
 }
         
-#pragma mark PasscodeViewController delegate
+
+#pragma mark - PasscodeViewController delegate
+
 - (void)passcodeViewControllerDidSucceed:(APCPasscodeViewController *)__unused viewController
 {
     //set the tabbar controller as the rootViewController

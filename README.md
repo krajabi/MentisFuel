@@ -1,6 +1,10 @@
-Asthma Health
-=============
-The Asthma Mobile Health study is a personalized app that helps individuals gain greater insight into their asthma, adhere to treatment plans, and avoid triggers. The app presents a variety of surveys to better understand unique triggers for asthma exacerbations, and connects with HealthKit to track inhaler usage and peak flow values. 
+GlucoSuccess
+================
+
+GlucoSuccess is a unique iPhone application that utilizes [ResearchKit](https://github.com/ResearchKit/ResearchKit) and HealthKit to get a more accurate understanding of how various things affect the progression and management of type 2 diabetes. The app presents a variety of surveys and tasks to track health behaviors such as physical activity, diet and medications. 
+
+Massachusetts General Hospital’s goals in this study are to understand how health behaviors influence blood glucose in real life, with a resolution greater than ever before. At the same time, the app provides personalized insights into how one’s daily diet and physical activity relate to their blood glucose values. 
+
 
 Building the App
 ================
@@ -15,20 +19,16 @@ Building the App
 First, check out the source, including all the dependencies:
 
 ```
-git clone --recurse-submodules https://github.com/ResearchKit/AsthmaHealth.git
+git clone --recurse-submodules https://github.com/ResearchKit/GlucoSuccess.git
 ```
 
 ###Building it
 
-Open the project, `Asthma.xcodeproj`, and build and run.
+Open the project, `Diabetes.xcodeproj`, and build and run.
 
 
 Other components
 ================
-
-The [EuroQoL EQ-5D](http://www.euroqol.org/about-eq-5d.html) survey instrument
-is used in the shipping app, but has been removed from the open source
-version because it is not free to use.
 
 The shipping app also uses OpenSSL to add extra data protection, which
 has not been included in the published version of the AppCore
@@ -39,11 +39,11 @@ Data upload to [Bridge](http://sagebase.org/bridge/) has been disabled, the logo
 License
 =======
 
-The source in the AsthmaHealth repository is made available under the
+The source in the GlucoSuccess repository is made available under the
 following license unless another license is explicitly identified:
 
 ```
-Copyright (c) 2015, Icahn School of Medicine at Mount Sinai. All rights reserved. 
+Copyright (c) 2015, Massachusetts General Hospital. All rights reserved. 
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
