@@ -4,6 +4,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'PainOA' do
-pod 'ResearchKit', '~> 1.3'
-pod ‘CareKit', '~> 1.0’
+  pod 'ResearchKit', '~> 1.3'
+  pod ‘CareKit', '~> 1.0’
+  pod 'sdl-rkx', '~> 0.1’
 end

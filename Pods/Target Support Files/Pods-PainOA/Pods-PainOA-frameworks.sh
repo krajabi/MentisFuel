@@ -86,12 +86,15 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/CareKit/CareKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ResearchKit/ResearchKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/sdl-rkx/sdl_rkx.framework"
 fi
 if [[ "$CONFIGURATION" == "DebugAndSendToDataVerificationServer" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/CareKit/CareKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ResearchKit/ResearchKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/sdl-rkx/sdl_rkx.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/CareKit/CareKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ResearchKit/ResearchKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/sdl-rkx/sdl_rkx.framework"
 fi
