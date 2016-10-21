@@ -13,7 +13,7 @@ a:active {
 }
 
 body {
-    font-family: "Helvetica Neue", 'HelveticaNeue', 'HelveticaNeue';
+    font-family: "PT Sans Narrow", 'HelveticaNeue', 'HelveticaNeue';
     font-size:16pt;
     color:#000000;
     line-height:normal;
@@ -30,7 +30,7 @@ p,  h2 {
 }
 
 h1 {
-    font-family: 'HelveticaNeue-Light', 'HelveticaNeue light', 'Helvetica Neue';
+    font-family: 'PT Sans Narrow', 'HelveticaNeue light', 'Helvetica Neue';
     font-size:19pt;
     color:#000000;
     line-height:normal;
@@ -74,7 +74,7 @@ IMG.displayed {
 
 boldie
 {
-    font-family:'HelveticaNeue-Medium', 'Helvetica Neue Medium', Helvetica;
+    font-family:'PT Sans Narrow', 'Helvetica Neue Medium', Helvetica;
     font-size:16pt;
     color:#000000;
     line-height:normal;

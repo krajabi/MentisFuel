@@ -4,4 +4,10 @@
    <FileRef
       location = "container:PainOA.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:PainOA.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>
