@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+
 a  {
 	
 	color:#1d97c2;
@@ -13,7 +15,7 @@ a:active {
 }
 
 body {
-    font-family: "PT Sans Narrow", 'HelveticaNeue', 'HelveticaNeue';
+    font-family: 'Raleway', 'HelveticaNeue', 'HelveticaNeue';
     font-size:16pt;
     color:#000000;
     line-height:normal;
@@ -30,7 +32,7 @@ p,  h2 {
 }
 
 h1 {
-    font-family: 'PT Sans Narrow', 'HelveticaNeue light', 'Helvetica Neue';
+    font-family: 'Raleway', 'HelveticaNeue light', 'Helvetica Neue';
     font-size:19pt;
     color:#000000;
     line-height:normal;
@@ -74,7 +76,7 @@ IMG.displayed {
 
 boldie
 {
-    font-family:'PT Sans Narrow', 'Helvetica Neue Medium', Helvetica;
+    font-family:'Raleway', 'Helvetica Neue Medium', Helvetica;
     font-size:16pt;
     color:#000000;
     line-height:normal;
@@ -85,7 +87,7 @@ boldie
 }
 
 ul, ol {
-    font-family: "Helvetica Neue", 'HelveticaNeue', 'HelveticaNeue';
+    font-family: 'Raleway', 'HelveticaNeue', 'HelveticaNeue';
     font-size:16pt;
     color:#000000;
     list-style-type: round;

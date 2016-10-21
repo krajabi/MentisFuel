@@ -244,7 +244,7 @@ typedef NS_ENUM(NSUInteger, APHMigrationRecurringKinds)
 - (void) setUpAppAppearance
 {
     [APCAppearanceInfo setAppearanceDictionary:@{
-                                                 kPrimaryAppColorKey : [UIColor colorWithRed:0.020 green:0.549 blue:0.737 alpha:1.000],  //#058cbc Diabetes
+                                                 kPrimaryAppColorKey : [UIColor colorWithRed:0.020 green:0.549 blue:0.737 alpha:1.000],  //#058cbc PainOA
                                                  kWeightCheckSurveyIdentifier: [UIColor appTertiaryRedColor],
                                                  kGlucoseLogSurveyIdentifier : [UIColor appTertiaryGreenColor],
                                                  kSevenDayAllocationIdentifier: [UIColor appTertiaryBlueColor],
