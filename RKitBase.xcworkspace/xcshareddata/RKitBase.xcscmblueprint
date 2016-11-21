@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0FA3A8BAEAEDA75295FA7991B37140DB54ABC2F0+++CDC5CCE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0FA3A8BAEAEDA75295FA7991B37140DB54ABC2F0+++CDC5CCE" : 9223372036854775807,
+    "0FA3A8BAEAEDA75295FA7991B37140DB54ABC2F0+++0757C66" : 9223372036854775807,
+    "0FA3A8BAEAEDA75295FA7991B37140DB54ABC2F0+++D85F37A" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AB25435D-2501-4E5B-AD7E-17D54245D7FE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0FA3A8BAEAEDA75295FA7991B37140DB54ABC2F0+++CDC5CCE" : "PainOA\/",
+    "0FA3A8BAEAEDA75295FA7991B37140DB54ABC2F0+++0757C66" : "",
+    "0FA3A8BAEAEDA75295FA7991B37140DB54ABC2F0+++D85F37A" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RKitBase",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RKitBase.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/citizenendo\/endl.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0FA3A8BAEAEDA75295FA7991B37140DB54ABC2F0+++0757C66"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CornellTech-Eli-Lilly\/PainOA.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0FA3A8BAEAEDA75295FA7991B37140DB54ABC2F0+++CDC5CCE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CornellTech-Eli-Lilly\/PainOA.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0FA3A8BAEAEDA75295FA7991B37140DB54ABC2F0+++D85F37A"
+    }
+  ]
+}

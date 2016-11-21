@@ -1,0 +1,31 @@
+{
+   "ProfileValues":[
+     {
+       "profileTitle":"Diagnosis",
+       "detailTitle":"Diagnosis",
+       "keyboard":"Custom",
+       "choices":["Yes","No"],
+       "prompt":"Have you been officially diagnosed with osteoarthritis?",
+       "hide":"false",
+       "section":"Osteoarthritis"
+     },
+     {
+       "profileTitle":"Medication Management",
+       "detailTitle":"Medication Management",
+       "keyboard":"Custom",
+       "choices":["Yes","No"],
+       "prompt":"Are you taking medication to manage your osteoarthritis?",
+       "hide":"false",
+       "section":"Osteoarthritis"
+     },
+     {
+       "profileTitle":"Email",
+       "detailTitle":"Email",
+       "keyboard":"Email",
+       "choices":["Yes","No"],
+       "prompt":"What is your email?",
+       "hide":"false",
+       "section":"Contact"
+     }
+   ]
+}

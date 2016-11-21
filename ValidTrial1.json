@@ -1,0 +1,43 @@
+{
+    "surveyProperties":
+    {
+        "prompFrequency": 30,
+        "stepCount": 2
+    },
+    "surveyIntro":
+    {
+        "identifier":"IntroStep",
+        "title":"Pain Medication Log",
+        "text":"We will now ask you some questions regarding your medication intake and how it affects your daily activities. Please answer these questions truthfully."
+    },
+    "surveySummary":
+    {
+        "identifier":"SummaryStep",
+        "title":"All Done!",
+        "text":"We appreciate you taking the time to complete this survey"
+    },
+    "surveySteps":
+    [
+    {
+     "numAnswers": 5,
+     "title":"Question 1",
+     "text":"How would you rate the following based on your current medication?",
+     "textChoices":{"1":"Strongly Disagree","2":"Disagree","3":"I'm not sure","4":"Agree","5":"Strongly Agree"},
+     "questions":
+     [
+      {
+      "identifier":"Q1.1",
+      "prompt":"Your current medication is effective at alleviating pain."
+      },
+      {
+      "identifier":"Q1.2",
+      "prompt":"You are able to carry out your daily activities with no problem."
+      },
+      {
+      "identifier":"Q1.3",
+      "prompt":"You sleep undisturbed throughout the night."
+      }
+      ]
+     }
+     ]
+}

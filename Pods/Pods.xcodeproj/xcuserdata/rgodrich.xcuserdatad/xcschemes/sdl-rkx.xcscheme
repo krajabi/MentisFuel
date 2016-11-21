@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7EAC351F0D56B86A8B7989B9C2ABDB7C"
+               BlueprintIdentifier = "CC3D89959555804E5627E35D37A01FFF"
                BuildableName = "sdl_rkx.framework"
                BlueprintName = "sdl-rkx"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7EAC351F0D56B86A8B7989B9C2ABDB7C"
+            BlueprintIdentifier = "CC3D89959555804E5627E35D37A01FFF"
             BuildableName = "sdl_rkx.framework"
             BlueprintName = "sdl-rkx"
             ReferencedContainer = "container:Pods.xcodeproj">

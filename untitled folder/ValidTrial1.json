@@ -1,0 +1,283 @@
+{
+    "surveyProperties":
+    {
+        "prompFrequency": 30,
+        "stepCount": 2
+    },
+    "surveyIntro":
+    {
+        "identifier":"IntroStep",
+        "title":"Monthly Check-in",
+        "text":"We're going to ask you some questions about how your quality of life has been over the last month, covering the following topics:\n\nYour health now\nYour work and daily activities\nYour relationships\nYour pain\nYour feelings\nYour social life\nYour overall health\n\nWe have quite a few questions for you, but hang in there, you only need to answer these questions once a month!"
+    },
+    "surveySummary":
+    {
+        "identifier":"SummaryStep",
+        "title":"All Done!",
+        "text":"We appreciate you taking the time to complete this survey"
+    },
+    "surveySteps":
+    [
+     {
+     "numAnswers": 5,
+     "title":"Question 1",
+     "text":"",
+     "textChoices":{"1":"Poor","2":"Fair","3":"Good","4":"Very good","5":"Excellent"},
+     "questions":
+     [
+      {
+      "identifier":"Q1",
+      "prompt":"I general, would you say your health is:"
+      }
+      ]
+     },
+     {
+     "numAnswers": 5,
+     "title":"Question 2",
+     "text":"",
+     "textChoices":{"1":"Much worse","2":"Somewhat worse","3":"About the same","4":"Somewhat better","5":"Much better"},
+     "questions":
+     [
+      {
+      "identifier":"Q2",
+      "prompt":"Compared to one year ago, your health now is:"
+      }
+      ]
+     },
+     {
+     "numAnswers": 3,
+     "title":"Question 3a",
+     "text":"The following items are about activities you might do during a typical day. Does your health now limit you in these activities? If so, how much?",
+     "textChoices":{"1":"Yes, A Lot","2":"Yes, A Little","3":"Not at All"},
+     "questions":
+     [
+      {
+      "identifier":"Q3a1",
+      "prompt":"a) Vigorous activities such as running, lifting heavy objects, participating in strenuous sports"
+      },
+      {
+      "identifier":"Q3a2",
+      "prompt":"b) Moderate activities, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf"
+      },
+      {
+      "identifier":"Q3a3",
+      "prompt":"c) lifting or carrying groceries"
+      },
+      {
+      "identifier":"Q3a4",
+      "prompt":"d) climbing several flights of stairs"
+      },
+      {
+      "identifier":"Q3a5",
+      "prompt":"e) climbing one flight of stairs"
+      }
+      ]
+     },
+     {
+     "numAnswers": 3,
+     "title":"Question 3b",
+     "text":"The following items are about activities you might do during a typical day. Does your health now limit you in these activities? If so, how much?",
+     "textChoices":{"1":"Yes, A Lot","2":"Yes, A Little","3":"Not at All"},
+     "questions":
+     [
+      {
+      "identifier":"Q3b1",
+      "prompt":"f) Bending, kneeling, or stooping"
+      },
+      {
+      "identifier":"Q3b2",
+      "prompt":"g) Walking more than a mile"
+      },
+      {
+      "identifier":"Q3b3",
+      "prompt":"h) walking several blocks"
+      },
+      {
+      "identifier":"Q3b4",
+      "prompt":"i) walking one block"
+      },
+      {
+      "identifier":"Q3b5",
+      "prompt":"j) Bathing or dressing yourself"
+      }
+      ]
+     },
+     {
+     "numAnswers": 2,
+     "title":"Question 4",
+     "text":"During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of your physical health?",
+     "textChoices":{"1":"Yes","2":"No"},
+     "questions":
+     [
+      {
+      "identifier":"Q4.1",
+      "prompt":"a) Cut down the time you spent on work or other activities"
+      },
+      {
+      "identifier":"Q4.2",
+      "prompt":"b) Accomplisehd less than you would like "
+      },
+      {
+      "identifier":"Q4.3",
+      "prompt":"c) Were limited in the kind of work or other activities"
+      },
+      {
+      "identifier":"Q4.4",
+      "prompt":"d) Had difficulty performing the work or other activites (for example, it took extra effort)"
+      }
+      ]
+     },
+     {
+     "numAnswers": 2,
+     "title":"Question 5",
+     "text":"During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of any emotional problems(such as feeling depressed or anxious)?",
+     "textChoices":{"1":"Yes","2":"No"},
+     "questions":
+     [
+      {
+      "identifier":"Q5.1",
+      "prompt":"a) Cut down the amount of time you spent on work or other activities"
+      },
+      {
+      "identifier":"Q5.2",
+      "prompt":"b) Accomplished less than you would like"
+      },
+      {
+      "identifier":"Q5.3",
+      "prompt":"c) Didn't do work or other activites as carefully as usual"
+      }
+      ]
+     },
+     {
+     "numAnswers": 5,
+     "title":"Question 6",
+     "text":"",
+     "textChoices":{"1":"Extremely","2":"Quite a bit","3":"Moderately","4":"Slightly","5":"Not at all"},
+     "questions":
+     [
+      {
+      "identifier":"Q6",
+      "prompt":"During the past 4 weeks, to what extent has your physical health or emotional problems interfered with your normal social activities with family, friends, neighbors, or groups?"
+      }
+      ]
+     },
+     {
+     "numAnswers": 6,
+     "title":"Question 7",
+     "text":"",
+     "textChoices":{"1":"Very Severe","2":"Severe","3":"Moderate","4":"Mild","5":"Very mild","6":"None"},
+     "questions":
+     [
+      {
+      "identifier":"Q7",
+      "prompt":"How much bodily pain have you had during the past 4 weeks?"
+      }
+      ]
+     },
+     {
+     "numAnswers": 5,
+     "title":"Question 8",
+     "text":"",
+     "textChoices":{"1":"Extremely","2":"Quite a bit","3":"Moderately","4":"A little bit","5":"Not at all"},
+     "questions":
+     [
+      {
+      "identifier":"Q8",
+      "prompt":"During the past 4 weeks, how much did pain interfere with your normal work (including both work outside the home and housework)?"
+      }
+      ]
+     },
+     {
+     "numAnswers": 6,
+     "title":"Question 9a",
+     "text":"How much of the time during the past 4 weeks ",
+     "textChoices":{"1":"None","2":"A Little","3":"Some","4":"A Good Bit","5":"Most","6":"All the Time"},
+     "questions":
+     [
+      {
+      "identifier":"Q9a1",
+      "prompt":"a) Did you feel full of pep?"
+      },
+      {
+      "identifier":"Q9a2",
+      "prompt":"b) Have you been a very nervous person?"
+      },
+      {
+      "identifier":"Q9a3",
+      "prompt":"c) Have you felt so down in the dumps that nothing could cheer you up?"
+      },
+      {
+      "identifier":"Q9a4",
+      "prompt":"d) Have you felt calm and peaceful?"
+      },
+      {
+      "identifier":"Q9a5",
+      "prompt":"e) Did you have a lot of energy?"
+      }
+      ]
+     },
+     {
+     "numAnswers": 6,
+     "title":"Question 9b",
+     "text":"How much of the time during the past 4 weeks ",
+     "textChoices":{"1":"None","2":"A Little","3":"Some","4":"A Good Bit","5":"Most","6":"All the Time"},
+     "questions":
+     [
+      {
+      "identifier":"Q9b1",
+      "prompt":"f) Have you felt downhearted and blue?"
+      },
+      {
+      "identifier":"Q9b2",
+      "prompt":"g) Did you fell worn out?"
+      },
+      {
+      "identifier":"Q9b3",
+      "prompt":"h) Have you been a happy person?"
+      },
+      {
+      "identifier":"Q9b4",
+      "prompt":"i) Did you feel tired?"
+      }
+      ]
+     },
+     {
+     "numAnswers": 5,
+     "title":"Question 10",
+     "text":"",
+     "textChoices":{"1":"All the time","2":"Most","3":"Some","4":"A Little","5":"None"},
+     "questions":
+     [
+      {
+      "identifier":"Q10",
+      "prompt":"During the past 4 weeks, how much of the time has your physical health or emotional problems interfered with your social activities (like visiting friends, relatives, etc.)?"
+      }
+      ]
+     },
+     {
+     "numAnswers": 5,
+     "title":"Question 11",
+     "text":"How TRUE or FALSE is each of the following statements for you:",
+     "textChoices":{"1":"Definitely False","2":"Mostly False","3":"Don't Know","4":"Mostly True","5":"Definitely True"},
+     "questions":
+     [
+      {
+      "identifier":"Q11.1",
+      "prompt":"a) I seem to get sick a little easier than other people"
+      },
+      {
+      "identifier":"Q11.2",
+      "prompt":"b) I am as healthy as anybody I know"
+      },
+      {
+      "identifier":"Q11.3",
+      "prompt":"c) I expect my health to get worse"
+      },
+      {
+      "identifier":"Q11.4",
+      "prompt":"d) My health is excellent"
+      }
+      ]
+     }
+     ]
+}

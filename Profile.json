@@ -1,0 +1,34 @@
+{
+   "Profile values":[
+     {
+       "profileTitle":"Date of Birth",
+       "detailTitle":"Date of Birth",
+       "keyboard":"DatePicker",
+       "prompt":"Please enter your date of Birth:"
+     },
+     {
+       "profileTitle":"Weight",
+       "detailTitle":"Weight",
+       "keyboard":"NumberPad",
+       "prompt":"Please enter your weight"
+     },
+     {
+       "profileTitle":"Height",
+       "detailTitle":"Date of Birth",
+       "keyboard":"HeightPicker",
+       "prompt":"Please enter your height"
+     },
+     {
+       "profileTitle":"Do you use medication?",
+       "detailTitle":"Medication",
+       "keyboard":"Boolean",
+       "prompt":"Do you use medication?"
+     },
+     {
+       "profileTitle":"What medication do you use?",
+       "detailTitle":"Medication",
+       "keyboard":"Normal",
+       "prompt":"What medication do you use?"
+     }
+   ]
+}

@@ -1,0 +1,108 @@
+{
+    "MEDL":{
+        "full":{
+            "identifier":"MEDL Spot Identifier",
+            "prompt":"How hard is this activity for you on a difficult day?",
+            "summary":{
+                "identifier":"MEDL Spot Summary Identifier",
+                "title":"Thanks",
+                "text":"Thank you for participating in the MEDL Spot Assessment"
+            },
+        },
+        "spot":{
+            "identifier":"MEDL Spot Identifier",
+            "prompt":"Did you use any of these to manage your osteoarthritis pain today?",
+            "summary":{
+                "identifier":"MEDL Spot Summary Identifier",
+                "title":"Thanks",
+                "text":"Thank you for participating in the MEDL Spot Assessment"
+            },
+            "noActivitiesSummary": {
+                "identifier":"MEDL Spot No Activities Identifier",
+                "title":"Thanks",
+                "text":"You have no medications to log"
+            },
+            "options":{
+                "somethingSelectedButtonColor":"#0080ff",
+                "nothingSelectedButtonColor":"#FCC103",
+                "itemCellTextBackgroundColor": "#FCC103",
+                "itemCellSelectedColor":"#7FEE7D",
+                "itemCellSelectedOverlayImageTitle":"first_tab",
+                "itemsPerRow":2,
+                "itemMinSpacing":10.0
+            }
+        },
+        "medications":[
+                      {
+                       "identifier": "Duloxetine",
+                       "generalDescription": "",
+                       "specificDescription": "Duloxetine",
+                       "imageTitle": "Duloxetine",
+                       "category": "SSNRI"
+                      },
+                      {
+                       "identifier": "Tylenol",
+                       "generalDescription": "Acetaminophen",
+                       "specificDescription": "Tylenol",
+                       "imageTitle": "Tylenol",
+                       "category": "Analgesic"
+                      },
+                      {
+                       "identifier": "Advil",
+                       "generalDescription": "Ibuprofen",
+                       "specificDescription": "Advil",
+                       "imageTitle": "advil",
+                       "category": "NSAID"
+                      },
+                      {
+                       "identifier": "Motrin",
+                       "generalDescription": "Ibuprofen",
+                       "specificDescription": "Motrin",
+                       "imageTitle": "motrin",
+                       "category": "NSAID"
+                      },
+                      {
+                       "identifier": "Aleve",
+                       "generalDescription": "Naproxen",
+                       "specificDescription": "Aleve",
+                       "imageTitle": "aleve",
+                       "category": "NSAID"
+                      },
+                      {
+                       "identifier": "Arthrotec",
+                       "generalDescription": "Diclofenac/Misoprostol",
+                       "specificDescription": "Arthrotec",
+                       "imageTitle": "Arthrotec",
+                       "category": "NSAID"
+                      },
+                      {
+                       "identifier": "Fentanyl",
+                       "generalDescription": "",
+                       "specificDescription": "Fentanyl",
+                       "imageTitle": "Fentanyl",
+                       "category": "Narcotic"
+                      },
+                      {
+                       "identifier": "Hydromorphone",
+                       "generalDescription": "",
+                       "specificDescription": "Hydromorphone",
+                       "imageTitle": "Hydromorphone",
+                       "category": "Narcotic"
+                      },
+                      {
+                       "identifier": "Codeine",
+                       "generalDescription": "",
+                       "specificDescription": "Codeine",
+                       "imageTitle": "codeine",
+                       "category": "Opioids"
+                      },
+                      {
+                       "identifier": "Toradol",
+                       "generalDescription": "Ketorolac",
+                       "specificDescription": "Toradol",
+                       "imageTitle": "Toradol",
+                       "category": "NSAID"
+                      }
+                      ]
+    }
+}

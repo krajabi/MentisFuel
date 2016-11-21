@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-PainOA.xcscheme</key>
+		<key>Pods-RKitBase.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>302BC688A8822147D4B259CE54DD79D6</key>
+		<key>32CADA80835BD6F1C2ED8D607BA0E070</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>51AEC3CEA17CACA5876D7EEBF4DF1C34</key>
+		<key>A864953340A2E42EB07A3065901E80C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7EAC351F0D56B86A8B7989B9C2ABDB7C</key>
+		<key>CC3D89959555804E5627E35D37A01FFF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C09D58E9AE7ACD4FDCE15358AC115E8D</key>
+		<key>EF7DA05F110DE58828FF521C04FC2339</key>
 		<dict>
 			<key>primary</key>
 			<true/>
