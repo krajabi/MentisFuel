@@ -92,15 +92,7 @@ struct Constants {
     struct Consent {
         static let CONSENT_TITLE = "PainOA Study Consent Form"
        static let CONSENT_TEXT = [
-            "PainOA is a collaborative product developed by Cornell Tech to improve patient-physician communication through enhanced tracking of critical health data.",
-            "In order to access this product, the app will request your permission to access your health data (via Iphone Health) and will ask you to self-report variables related to your Osteoarthritis condition. We will only collect this information if you grant permission.",
-            "Your data will be handled securely to maintain confidentiality. We will use strict information technology procedure to safeguard your data and prevent improper access. The data collected through the app will be encrypted on the phone.",            
-            "The study will request your permission to access your health data and other self-reported variables.\n\nBy analyzing the data from many PainOA app users, we hope to provide physicians with a tool to better understand osteoarthritis.",
-            "This application involves an initial set-up survey upon enrollment in the study. After this, you will be asked to track particular aspects of your disease and your daily activity.",
-            "This study requires that you complete very short surveys multiple times a day.",
-            "For further questions, please contact us at support@painoa.org.",
-            "Participation in this study may involve risks to your privacy, but steps will be taken to protect it. We take great care to protect your information, however there is a slight risk of loss of privacy. The risk is low because we separate your account information (name, email) from the study data. Participation is voluntary, you may stop participating at any time.﻿",
-            "Pain OA does not replace your medical care provider and does not provide diagnosis or treatment recommendations. This mobile application will NOT provide you with information related to your specific health conditions or health risks. This is NOT a medical diagnostic tool and is not designed to provide medical advice, professional diagnosis, opinion, treatment or healthcare services. You should not use the information provided in Pain OA application in place of a consultation with your physician or healthcare provider. If you have any questions or concerns related to your health, you should seek the advice of a medical professional."
+            "Consent goes here."
         ]
 
     }

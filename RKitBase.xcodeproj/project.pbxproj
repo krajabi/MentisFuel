@@ -34,7 +34,6 @@
 		8445D48F1D674E2200AD5835 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8445D48A1D674E2200AD5835 /* ProfileHeaderView.swift */; };
 		8445D4931D674E6E00AD5835 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8445D4921D674E6E00AD5835 /* Main.storyboard */; };
 		8445D4A11D674F0A00AD5835 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8445D4951D674F0A00AD5835 /* DetailTableViewController.swift */; };
-		8445D4A21D674F0A00AD5835 /* IntroQuestionPainOA.json in Resources */ = {isa = PBXBuildFile; fileRef = 8445D4961D674F0A00AD5835 /* IntroQuestionPainOA.json */; };
 		8445D4A31D674F0A00AD5835 /* PainOA_YADL.json in Resources */ = {isa = PBXBuildFile; fileRef = 8445D4971D674F0A00AD5835 /* PainOA_YADL.json */; };
 		8445D4A41D674F0A00AD5835 /* ValidationSurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8445D4981D674F0A00AD5835 /* ValidationSurveyTask.swift */; };
 		8445D4A51D674F0A00AD5835 /* ValidTrial1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8445D4991D674F0A00AD5835 /* ValidTrial1.json */; };
@@ -114,7 +113,6 @@
 		8445D48A1D674E2200AD5835 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		8445D4921D674E6E00AD5835 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8445D4951D674F0A00AD5835 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailTableViewController.swift; path = ../DetailTableViewController.swift; sourceTree = "<group>"; };
-		8445D4961D674F0A00AD5835 /* IntroQuestionPainOA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = IntroQuestionPainOA.json; path = ../IntroQuestionPainOA.json; sourceTree = "<group>"; };
 		8445D4971D674F0A00AD5835 /* PainOA_YADL.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PainOA_YADL.json; path = ../PainOA_YADL.json; sourceTree = "<group>"; };
 		8445D4981D674F0A00AD5835 /* ValidationSurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidationSurveyTask.swift; path = ../ValidationSurveyTask.swift; sourceTree = "<group>"; };
 		8445D4991D674F0A00AD5835 /* ValidTrial1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ValidTrial1.json; path = ../ValidTrial1.json; sourceTree = "<group>"; };
@@ -350,7 +348,6 @@
 			isa = PBXGroup;
 			children = (
 				8445D4B81D67792800AD5835 /* Profile.json */,
-				8445D4961D674F0A00AD5835 /* IntroQuestionPainOA.json */,
 				8445D4971D674F0A00AD5835 /* PainOA_YADL.json */,
 				D13D52DE1DDED08600A051C2 /* ValidationSurveyTask.json */,
 				8445D4991D674F0A00AD5835 /* ValidTrial1.json */,
@@ -509,7 +506,6 @@
 				28DC4E8C1D6679220087AF36 /* Assets.xcassets in Resources */,
 				8445D4A91D674F0A00AD5835 /* PainOA_YADL.xcassets in Resources */,
 				D13D52DF1DDED08600A051C2 /* ValidationSurveyTask.json in Resources */,
-				8445D4A21D674F0A00AD5835 /* IntroQuestionPainOA.json in Resources */,
 				8445D4A51D674F0A00AD5835 /* ValidTrial1.json in Resources */,
 				8445D4A31D674F0A00AD5835 /* PainOA_YADL.json in Resources */,
 				D13D52E11DDED8AC00A051C2 /* PainOA_MEDL.xcassets in Resources */,
