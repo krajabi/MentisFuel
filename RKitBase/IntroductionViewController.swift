@@ -36,9 +36,6 @@ class IntroductionViewController: UIPageViewController, UIPageViewControllerData
     
     let pageViewControllers: [UIViewController] = {
         var intro = [UIViewController]()
-        for i in 0..<Constants.Identifiers.INTRO.count {
-        intro.append(UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(Constants.Identifiers.INTRO[i]))
-        intro[i].view.backgroundColor = UIColor.whiteColor()        }
         return intro
     }()
     
@@ -49,8 +46,6 @@ class IntroductionViewController: UIPageViewController, UIPageViewControllerData
 
         // Do any additional setup after loading the view.
         dataSource = self
-        UIPageControl.appearanceWhenContainedInInstancesOfClasses([IntroductionViewController.self]).currentPageIndicatorTintColor = Constants.Colors.BLUE
-        UIPageControl.appearanceWhenContainedInInstancesOfClasses([IntroductionViewController.self]).pageIndicatorTintColor = Constants.Colors.OFF_WHITE
         
         setViewControllers([pageViewControllers[0]], direction: .Forward, animated: false, completion: nil)
     }

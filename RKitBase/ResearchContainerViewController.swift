@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import UIKit
 import ResearchKit
 
-class ResearchContainerViewController: UIViewController, HealthClientType {
+class ResearchContainerViewController: UIViewController {
     // MARK: HealthClientType
     
     var healthStore: HKHealthStore?
@@ -49,19 +49,9 @@ class ResearchContainerViewController: UIViewController, HealthClientType {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let hasRegisteredBool = NSUserDefaults.standardUserDefaults().boolForKey(Constants.HAS_REGISTERED)
         //if let defaults = standardDefaults.objectForKey(Constants.HAS_REGISTERED) as? Bool where defaults == true{
-        if hasRegisteredBool {
-            //if ORKPasscodeViewController.isPasscodeStoredInKeychain() {
-            print("hasRegisteredBool", hasRegisteredBool)
-            //checkDaysSinceLongTermSurveys()
-            print("toStudy from ResearchContainer")
-            toStudy()
-        }
-        else {
-            print("onboarding")
-            toOnboarding()
-        }
+        print("onboarding")
+        toOnboarding()
         
     }
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -70,10 +60,6 @@ class ResearchContainerViewController: UIViewController, HealthClientType {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
-        
-        if let healthStore = healthStore {
-            segue.destinationViewController.injectHealthStore(healthStore)
-        }
     }
     
     // MARK: Unwind segues
@@ -112,8 +98,6 @@ extension ResearchContainerViewController: ORKTaskViewControllerDelegate {
         if taskViewController is WithdrawViewController {
             if reason == .Completed {
                 //ORKPasscodeViewController.removePasscodeFromKeychain()
-                NSUserDefaults.standardUserDefaults().setBool(false, forKey: Constants.HAS_REGISTERED)
-                LocalNotification.deleteAllNotifications()
                 toOnboarding()
             }
             

@@ -42,8 +42,7 @@ class ProfileViewController: UITableViewController {
     //IF NUMBER OF SECTIONS MODIFIED IN JSON, MUST BE MODIFIED HERE AS WELL!!
     let numSections = 2
     var profileSection = [[ProfileProperty](),[ProfileProperty]()]
-    let sectionTitle = [Constants.OSTEOARTHRITIS,
-                        Constants.CONTACT]
+
     
     var healthStore: HKHealthStore?
     
@@ -51,23 +50,7 @@ class ProfileViewController: UITableViewController {
     required init?(coder aDecoder: NSCoder) {
         defaults = NSUserDefaults.standardUserDefaults()
         super.init(coder: aDecoder)
-        //create an array of all the values in Profile
-        getProfileCellsData("Profile")
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        let nav = self.navigationController?.navigationBar
-        let image = Constants.Images.BACKGROUND
-        nav?.setBackgroundImage(image, forBarMetrics: .Default)
-        nav?.tintColor = Constants.Colors.BLUE
-        nav?.translucent = false
-        nav?.titleTextAttributes = [NSForegroundColorAttributeName: Constants.Colors.BLUE]
-        nav?.shadowImage = UIImage()
-        tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 10)
-        tableView.tableHeaderView?.backgroundColor =  UIColor(patternImage: Constants.Images.BACKGROUND)
-        tableView.backgroundColor = Constants.Colors.OFF_WHITE
-        
+
     }
     
     override func viewDidLoad() {
@@ -117,9 +100,6 @@ class ProfileViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let  headerCell = tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! CustomHeaderCell
-        headerCell.backgroundColor = Constants.Colors.BLUE
-        headerCell.headerLabel.textColor = UIColor.whiteColor()
-        headerCell.headerLabel.text = sectionTitle[section]
         
         return headerCell
     }
@@ -168,46 +148,7 @@ class ProfileViewController: UITableViewController {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
-    
-    //get the data for the profile properties
-    func getProfileCellsData(propertiesFileName: String){
-        //Read json file data to calss variables
-        guard let filePath = NSBundle.mainBundle().pathForResource(propertiesFileName, ofType: "json")
-            else {
-                fatalError("Unable to locate file with Profile values in main bundle")
-        }
-        
-        guard let fileContent = NSData(contentsOfFile: filePath)
-            else {
-                fatalError("Unable to create NSData with file content (Profile data)")
-        }
-        
-        let jsonData = try! NSJSONSerialization.JSONObjectWithData(fileContent, options: NSJSONReadingOptions.MutableContainers)
-        guard let completeJSON = jsonData as? [String: AnyObject],
-            let profileArrayJSON = completeJSON["ProfileValues"] as? [AnyObject]
-            else {
-                fatalError("JSON Parse Error")
-        }
-        //add properties from Json to an array
-        for i in 0..<profileArrayJSON.count{
-            let property = (profileArrayJSON[i] as? [String: AnyObject])!
-            let profileTitle = (property["profileTitle"] as? String)!
-            let detailTitle = (property["detailTitle"] as? String)!
-            let prompt = (property["prompt"] as? String)!
-            let hideString = (property["hide"] as? String)!
-            let hide = (hideString == "true")
-            let section = (property["section"] as? String)!
-            let choiceList = (property["choices"] as? [String])!
-            switch (section){
-            case sectionTitle[0]:
-                profileSection[0].append(ProfileProperty(detail: detailTitle, profile: profileTitle, promptString: prompt, choiceList: choiceList, hidden: hide, sectionTitle: section))
-            case sectionTitle[1]:
-                profileSection[1].append(ProfileProperty(detail: detailTitle, profile: profileTitle, promptString: prompt, choiceList: choiceList, hidden: hide, sectionTitle: section))
-            default:
-                print("One or more properties have a bad section title, or sections titles poorly declared")
-            }
-        }
-    }
+
 }
 class ProfileProperty{
     var detailTitle: String

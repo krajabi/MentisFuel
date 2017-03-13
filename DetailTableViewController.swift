@@ -28,26 +28,7 @@ class DetailTableViewController: UITableViewController,UIPickerViewDelegate, UIP
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        editProfileTextField.placeholder = profileData
-        editProfileTextField.delegate = self
-        if !(currentTitle == nil){
-            self.title = currentTitle
-        }
-        switch currentTitle {
-        case Constants.EMAIL:
-            editProfileTextField.keyboardType = UIKeyboardType.EmailAddress
-        case Constants.AGE:
-            let intArray: [Int] = Array(1900...2016)
-            pickerData = intArray.map { String($0) }
-            setPickerView()
-        default:
-            setPickerView()
-        }
-        if !(currentTitle == Constants.EMAIL) {
-            setPickerView()
-        }else {
-            editProfileTextField.keyboardType = UIKeyboardType.EmailAddress
-        }
+
         NSTimer.scheduledTimerWithTimeInterval(0.6, target: self, selector: #selector(DetailTableViewController.setFirstResponder), userInfo: nil, repeats: false)
         
     }
@@ -72,7 +53,6 @@ class DetailTableViewController: UITableViewController,UIPickerViewDelegate, UIP
         
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.userInteractionEnabled = true
-        toolBar.barTintColor = Constants.Colors.BLUE
         toolBar.translucent = false
 
         itemPicker.backgroundColor = UIColor.whiteColor()
@@ -104,7 +84,6 @@ class DetailTableViewController: UITableViewController,UIPickerViewDelegate, UIP
         header.contentView.backgroundColor = UIColor.clearColor() //make the background color clear
         self.tableView.separatorStyle = .None
         header.textLabel?.text = prompt
-        header.textLabel?.textColor = Constants.Colors.BLUE
     }
     
     // The number of columns of data

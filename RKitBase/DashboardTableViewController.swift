@@ -67,30 +67,13 @@ class DashboardTableViewController: UITableViewController {
         
         // Animate any visible charts
         let visibleCells = tableView.visibleCells
-        let visibleAnimatableCharts = visibleCells.flatMap { animatableChartInCell($0) }
         
-        for chart in visibleAnimatableCharts {
-            chart.animateWithDuration(0.5)
-        }
     }
     
     // MARK: UITableViewDelegate
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         // Animate charts as they're scrolled into view.
-        if let animatableChart = animatableChartInCell(cell) {
-            animatableChart.animateWithDuration(0.5)
-        }
     }
     
-    // MARK: Convenience
-    
-    func animatableChartInCell(cell: UITableViewCell) -> AnimatableChart? {
-        for chart in allCharts {
-            guard let animatableChart = chart as? AnimatableChart where chart.isDescendantOfView(cell) else { continue }
-            return animatableChart
-        }
-        
-        return nil
-    }
 }

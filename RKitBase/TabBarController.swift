@@ -17,17 +17,12 @@ class TabBarController: UITabBarController {
         self.tabBar.translucent = false
         self.tabBar.clipsToBounds = true
         self.tabBar.backgroundImage = Constants.Images.BACKGROUND
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: Constants.Colors.BLUE], forState:.Normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: Constants.Colors.BLUE], forState:.Selected)
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for item in self.tabBar.items! as [UITabBarItem] {
-            if let image = item.image {
-                item.image = image.imageWithColor(Constants.Colors.OFF_WHITE).imageWithRenderingMode(.AlwaysOriginal)
-            }
-        }
+
     }
 }
 

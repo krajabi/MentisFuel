@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Charts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RKitBase.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,17 +32,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>32CADA80835BD6F1C2ED8D607BA0E070</key>
+		<key>0F3180B2F170CDD106A708272E043748</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A864953340A2E42EB07A3065901E80C0</key>
+		<key>5BA67BE8E961A6AA7CBFC013778824D8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CC3D89959555804E5627E35D37A01FFF</key>
+		<key>8144915D96D179D5E951C6D89F5B8CCF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>99778D4694275A4B2704589268A55581</key>
 		<dict>
 			<key>primary</key>
 			<true/>

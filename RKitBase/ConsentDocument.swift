@@ -64,19 +64,6 @@ class ConsentDocument: ORKConsentDocument {
             
             return section
         }
-        sections![5].title = "Potential Benefits"
-        sections![5].customLearnMoreButtonTitle = "Learn more about potential benefits"
-
-        sections![6].title = "Potential Risks"
-        sections![6].customLearnMoreButtonTitle = "Learn more about potential risks"
-
-        sections![7].title = "Voluntary Participation"
-        sections![7].customLearnMoreButtonTitle = "Learn more about voluntary participation in the study"
-        sections![7].customImage = UIImage(named: "withdraw")
-        
-        sections![8].title = "Issues to Consider"
-        sections![8].customLearnMoreButtonTitle = "Learn more about issues you should condiser"
-        sections![8].customImage = UIImage(named: "visitingDoctor")
 
         let signature = ORKConsentSignature(forPersonWithTitle: "Participant", dateFormatString: nil, identifier: "ConsentDocumentParticipantSignature")
         addSignature(signature)

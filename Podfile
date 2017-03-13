@@ -7,6 +7,7 @@ target 'RKitBase' do
   pod 'sdl-rkx', '~> 0.1’
   pod 'ResearchKit', '~> 1.3'
   pod 'CareKit', '~> 1.0'
+  pod ‘Charts’, ‘~> 2.3’
 end
 
 

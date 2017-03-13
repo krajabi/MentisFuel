@@ -36,7 +36,6 @@ class ProfileHeaderView: UIView {
     
     var seperatorHeight = CGFloat(0.5)
 
-    var seperatorColor = Constants.Colors.BLUE
 
     // MARK: UIView
     
@@ -46,7 +45,6 @@ class ProfileHeaderView: UIView {
         fillRect.origin.y = bounds.size.height - seperatorHeight
         fillRect.size.height = seperatorHeight
 
-        seperatorColor.setFill()
         UIRectFill(fillRect)
     }
 }
